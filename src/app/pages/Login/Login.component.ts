@@ -11,7 +11,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 function usernameOrEmailValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {

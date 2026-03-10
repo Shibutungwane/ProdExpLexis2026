@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { FavoritesComponent } from './favorites.component';
 import { FavoritesService } from 'app/services/favourate.service';
-import { HeadingComponent } from 'app/Heading/Heading.component';
+import { HeadingComponent } from 'app/components/Heading/Heading.component';
 import { LucideAngularModule } from 'lucide-angular';
 import { RouterLink } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';

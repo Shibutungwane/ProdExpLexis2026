@@ -57,7 +57,7 @@
   color:#e8171f;
   font-size: 18px;
   transition: color 0.3s;
-  z-index: 100;
+  z-index: 1;
 }
 
 .input-group input {

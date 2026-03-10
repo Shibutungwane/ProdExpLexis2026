@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router,RouterLink } from '@angular/router';
-import { HeadingComponent } from "app/Heading/Heading.component";
+import { HeadingComponent } from "app/components/Heading/Heading.component";
 import { FavoritesService } from 'app/services/favourate.service';
 import {
   LucideAngularModule,

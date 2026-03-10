@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { StatCardComponent } from "./stats/stats.component";
 import { LucideAngularModule,ShieldCheck} from 'lucide-angular';
-import { HeadingComponent } from 'app/Heading/Heading.component';
+import { HeadingComponent } from 'app/components/Heading/Heading.component';
 import { Router } from '@angular/router';
 
 @Component({

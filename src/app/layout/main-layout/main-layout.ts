@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet,RouterLink, RouterModule } from "@angular/router";
-import { HeaderComponent } from '../../header/header.component';
-import { MenuComponent } from '../../menu/menu.component';
+import { HeaderComponent } from '../../components/header/header.component';
+import { MenuComponent } from '../../components/menu/menu.component';
 import {
   LucideAngularModule,
   LayoutDashboard,

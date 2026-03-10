@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {  Observable, of, throwError } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { Product } from './productDetails.module';
-import { PRODUCTS } from '@api/products.data';
+import { PRODUCTS } from 'app/data/products.data';
 
 @Injectable({
   providedIn: 'root'

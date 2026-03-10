@@ -1,0 +1,140 @@
+<div class="mb-4 pb-6 relative">
+ 
+<app-Heading title="Admin Dashboard" subheading=" Overview of your product's performance."></app-Heading>
+  <button (click)="logout()"
+    class="absolute top-0 right-0 m-4 flex items-center gap-2 bg-green-50 hover:bg-green-200 text-green-700 px-3 py-1.5 rounded-full text-sm font-bold border border-green-200 shadow-sm z-10"
+    data-id="element-48">
+   <lucide-angular [img]="icons.ShieldCheck" class="h-4 w-4 "></lucide-angular>
+    Admin Mode Active<span  class="ml-2 text-green-800 hover:text-green-900 underline text-xs"
+     >Logout</span></button>
+</div>
+
+<div class="grid grid-cols-1 gap-6 ">
+  <!-- Left Column - Stat Cards -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:grid-cols-2 animate-in fade-in duration-500">
+    <app-stat-card title="Total Balance" value="R938,003,200" percentage="+12.84%" trend="up"
+      subtext="Balance bigger R6,259.00 last month" variant="orange"></app-stat-card>
+
+    <app-stat-card title="Total Income" value="R120,993,000" percentage="+11.49%" trend="up"
+      subtext="Balance bigger R5,953.00 last month" variant="dark"></app-stat-card>
+
+    <app-stat-card title="Total Expend" value="R496,085,100" percentage="-20.57%" trend="down"
+      subtext="Balance bigger R4,234.00 last month" variant="white"></app-stat-card>
+  </div>
+
+  <!-- Right Column - Charts & Schedule -->
+  <div class="flex flex-col gap-6">
+    <!-- Top Chart -->
+    <div class=" w-full">
+      <div class="bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden">
+        <div class="px-6 py-5 border-b border-stone-200 flex justify-between items-center bg-stone-50/50">
+          <h2 class="text-lg font-semibold text-stone-900">Recent Orders</h2>
+          <button class="text-sm font-medium text-red-600 hover:text-red-700">View all</button>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-stone-200 text-sm font-medium text-stone-500 bg-white">
+                <th class="px-6 py-4">Order ID</th>
+                <th class="px-6 py-4">Customer</th>
+                <th class="px-6 py-4">Date</th>
+                <th class="px-6 py-4">Total</th>
+                <th class="px-6 py-4">Status</th>
+              </tr>
+            </thead>
+
+            <tbody class="divide-y divide-stone-100">
+              <tr class="hover:bg-stone-50 transition-colors">
+                <td class="px-6 py-4 text-sm font-medium text-stone-900">ORD-001</td>
+                <td class="px-6 py-4 text-sm text-stone-600">Alice Johnson</td>
+                <td class="px-6 py-4 text-sm text-stone-600">Oct 24, 2023</td>
+                <td class="px-6 py-4 text-sm font-medium text-stone-900">R124.00</td>
+                <td class="px-6 py-4 text-sm">
+                  <span
+                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                    Processing
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-stone-50 transition-colors">
+                <td class="px-6 py-4 text-sm font-medium text-stone-900">ORD-002</td>
+                <td class="px-6 py-4 text-sm text-stone-600">Bob Smith</td>
+                <td class="px-6 py-4 text-sm text-stone-600">Oct 24, 2023</td>
+                <td class="px-6 py-4 text-sm font-medium text-stone-900">R89.50</td>
+                <td class="px-6 py-4 text-sm">
+                  <span
+                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                    Shipped
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-stone-50 transition-colors">
+                <td class="px-6 py-4 text-sm font-medium text-stone-900">ORD-003</td>
+                <td class="px-6 py-4 text-sm text-stone-600">Charlie Davis</td>
+                <td class="px-6 py-4 text-sm text-stone-600">Oct 23, 2023</td>
+                <td class="px-6 py-4 text-sm font-medium text-stone-900">R349.99</td>
+                <td class="px-6 py-4 text-sm">
+                  <span
+                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
+                    Delivered
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-stone-50 transition-colors">
+                <td class="px-6 py-4 text-sm font-medium text-stone-900">ORD-004</td>
+                <td class="px-6 py-4 text-sm text-stone-600">Diana Prince</td>
+                <td class="px-6 py-4 text-sm text-stone-600">Oct 22, 2023</td>
+                <td class="px-6 py-4 text-sm font-medium text-stone-900">R45.00</td>
+                <td class="px-6 py-4 text-sm">
+                  <span
+                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
+                    Delivered
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- Bottom Row -->
+    <div class="grid flex-1 grid-cols-1 gap-6 md:grid-cols-2">
+      <div class="flex flex-col justify-between rounded-3xl bg-white p-6 shadow-sm">
+        <div>
+          <h3 class="text-xs font-medium text-gray-500">Upcoming Schedule</h3>
+          <h2 class="mt-2 text-lg font-bold text-gray-900">
+            Business Analytics Press
+          </h2>
+        </div>
+
+        <div class="mt-6 flex items-end justify-between">
+          <div>
+            <p class="text-sm text-gray-500">Thu, 24 Aug</p>
+            <p class="text-3xl font-bold text-red-500">9:30 AM</p>
+          </div>
+
+          <div class="flex flex-col items-end">
+            <div class="flex -space-x-3">
+              @for (src of avatars; track $index) {
+              <img [src]="src" [alt]="'Avatar ' + $index"
+                class="h-8 w-8 rounded-full border-2 border-white object-cover ring-1 ring-gray-100" />
+              }
+            </div>
+            <p class="mt-2 text-xs font-medium text-gray-900">
+              David McGuaire
+            </p>
+            <p class="text-[10px] text-gray-500">and 20+ more</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

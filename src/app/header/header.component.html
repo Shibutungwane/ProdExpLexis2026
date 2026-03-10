@@ -1,0 +1,58 @@
+<header class="bg-white border-b border-gray-200 z-10 p-6 ">
+  <div class="flex items-center justify-between h-full px-6">
+
+    <!-- Left side -->
+    <div class="flex items-center gap-4 flex-1 relative ">
+
+       <a routerLink="" class="md:hidden absolute left-6">
+      <div class="flex items-center gap-3  p-6 border-b border-gray-100">
+      
+       <img src="/logo.svg" alt="Lexis nexis"  class="size-24"/>
+      </div>
+    </a>
+
+      <!-- Search -->
+      <div class="flex-1 max-w-2xl relative">
+
+        <h1 class="text-2xl "></h1>
+      </div>
+
+    </div>
+
+    <!-- Right side -->
+    <div class="flex items-center gap-4">
+
+   
+      <button
+        class="relative p-2 hover:bg-gray-100 rounded-lg"
+        aria-label="Notifications"
+      >
+        <lucide-icon
+          [img]="icons.Bell"
+          class="w-6 h-6 text-gray-600">
+        </lucide-icon>
+
+        <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full"></span>
+      </button>
+
+      <!-- User profile -->
+      <button class="flex items-center gap-3 pl-3   pr-2 py-2 hover:bg-gray-100 rounded-lg">
+        <img
+          src="/profile.jpg"
+          alt="Musharof"
+          class="w-10 h-10 rounded-full object-cover hidden"
+        />
+        <!-- <span class="font-medium darktext  hidden">{{username()}}</span> -->
+
+        <!-- <lucide-icon
+          [img]="ChevronDownIcon"
+          class="w-4 h-4 text-gray-600">
+        </lucide-icon> -->
+      </button>
+
+    </div>
+
+  </div>
+  
+</header>
+

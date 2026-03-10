@@ -1,0 +1,100 @@
+
+<div class="glass-container  inset-0">
+  <form id="loginForm" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="login-header">
+      <h1>Welcome Back Admin</h1>
+      <p>Sign in to your account to continue</p>
+
+      @if (isLoggedIn()) {
+      <div class="toast-success  mt-2">
+        Logged in successfully.
+      </div>
+      }
+      @if (isLoading()) {
+      <div class="toast-success  mt-2">
+        Loading .....
+      </div>
+      }
+      
+      @if (loginError()) {
+      <div class="toast-fail mt-2">
+        {{ loginError() }}
+      </div>
+      }
+
+    </div>
+    <div class="input-group">
+      <lucide-angular [img]="icons.UserRound" class="my-icon"></lucide-angular>
+      <input
+        type="text"
+        placeholder="Username or Email"
+        id="username"
+        name="username"
+        formControlName="username"
+      />
+    
+    </div>
+      @if (form.get('username')?.touched && form.get('username')?.invalid) {
+      <p class="control-error">
+        @if (form.get('username')?.errors?.['required']) {
+        Username is required
+        }
+        @if (form.get('username')?.errors?.['usernameOrEmail']) {
+        Enter a valid username or email
+        }
+      </p>
+      }
+
+<div class="input-group">
+  <lucide-angular [img]="icons.LockKeyhole" class="my-icon"></lucide-angular>
+
+  <input
+    [type]="showPassword() ? 'text' : 'password'"
+    placeholder="Password"
+    id="password"
+    name="password"
+    formControlName="password"
+  />
+
+  <!-- Toggle button -->
+  <button
+    type="button"
+    class="toggle-password"
+    (click)="togglePassword()"
+  >
+    <lucide-angular
+      [img]="showPassword() ? icons.EyeOff : icons.Eye"
+      class="eye-icon"
+    ></lucide-angular>
+  </button>
+
+ 
+</div>
+@if (form.get('password')?.touched && form.get('password')?.invalid) {
+<p class="control-error">
+  @if (form.get('password')?.errors?.['required']) {
+  Password is required
+  }
+  @if (form.get('password')?.errors?.['minlength']) {
+  Password must be at least 6 characters
+  }
+</p>
+}
+
+    <div class="remember-forgot">
+      <label class="remember">
+        <input type="checkbox" id="remember" formControlName="remember" />
+        <span>Remember me</span>
+      </label>
+      <a href="#" class="forgot-link">Forgot password?</a>
+    </div>
+
+    <button type="submit" class="login-btn">Sign In</button>
+
+
+
+ 
+  </form>
+</div>
+
+

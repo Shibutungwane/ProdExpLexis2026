@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+  text-align: center;
+}
+
+.error-page {
+  margin: auto;
+}
+.error-page__heading-title {
+  text-transform: capitalize;
+  font-size: 36px;
+  font-weight: 500;
+  color: #000;
+}
+.error-page__heading-desciption {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 200;
+}
+.error-page__button {
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #000;
+  font-size: 14px;
+  font-weight: 200;
+  padding: 15px 30px;;
+  border-radius: 15px;
+  box-shadow: 0px 7px 0px -2px #000;
+  transition: all 0.3s ease-in-out;
+  text-transform: capitalize;
+}
+.error-page__button:hover {
+  box-shadow: none;
+  background-color: #000;
+  color: #fff;
+}
+
+.eyes {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+.eye {
+  width: 80px;
+  height: 80px;
+  background-color: #000;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.eye__pupil {
+  width: 30px;
+  height: 30px;
+background-image: url("/LexisNexis.png"); 
+ background-size: cover;
+  border-radius: 50%;
+  animation: movePupil 2s infinite ease-in-out;
+  transform-origin: center center;
+  /*var(--button-padding)
+  To reverse the animation of the right eye, uncomment this.
+  */
+}
+@keyframes movePupil {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-10px, -10px);
+  }
+  50% {
+    transform: translate(10px, 10px);
+  }
+  75% {
+    transform: translate(-10px, 10px);
+  }
+}

@@ -1,0 +1,60 @@
+<div class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Menu</div>
+
+<a
+  class="w-full flex items-center justify-between px-4 py-3 rounded-lg mb-1 darkText"
+  routerLinkActive="active"
+  [routerLinkActiveOptions]="{ exact: true }"
+  href=""
+  routerLink=""
+>
+  <div class="flex items-center gap-3">
+    <lucide-icon [img]="icons.ShoppingBag" class="iconcolor w-5 h-5 iconcolor"></lucide-icon>
+    <span class="">Catalog</span>
+  </div>
+</a>
+
+<a
+  routerLink="favorites"
+  routerLinkActive="active"
+  [routerLinkActiveOptions]="{ exact: true }"
+  class="w-full flex items-center gap-3 px-4 py-3 rounded-lg darkText hover:bg-gray-50 mb-1"
+>
+  <lucide-icon [img]="icons.Heart" class="iconcolor w-5 h-5"></lucide-icon>
+  <span class="">Favorites</span>
+
+  @if (favoritesCount() > 0) {
+    <span class="bg-rose-500 text-white text-xs px-2 py-0.5 rounded-full ml-auto">
+      {{ favoritesCount() }}
+    </span>
+  }
+</a>
+
+<a
+  class="w-full flex items-center gap-3 relative px-4 py-3 rounded-lg darkText hover:bg-gray-50 mb-1"
+  routerLinkActive="active"
+  [routerLinkActiveOptions]="{ exact: true }"
+  href=""
+  routerLink="login"
+>
+  <lucide-icon [img]="icons.Shield" class="iconcolor w-5 h-5"></lucide-icon>
+
+ 
+  <span class="relative">Admin   @if (isLoggedIn()) {
+ <span
+      class="absolute -top-0 -right-2.5 w-2.5 h-2.5 bg-green-500 rounded-full border border-white"
+    ></span>
+  }  </span>
+</a>
+
+@if (isLoggedIn()) {
+  <a
+    class="w-full flex items-center gap-3 px-4 py-3 rounded-lg darkText hover:bg-gray-50 mb-1"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    href=""
+    routerLink="dashboard"
+  >
+    <lucide-icon [img]="icons.LayoutDashboard" class="iconcolor w-5 h-5"></lucide-icon>
+    <span class="">Dashboard</span>
+  </a>
+}

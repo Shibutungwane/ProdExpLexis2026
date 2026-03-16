@@ -43,16 +43,17 @@ export class MenuComponent implements OnInit {
   };
 
   private favoritesService = inject(FavoritesService);
-  private authService = inject(AuthService);
-  // Derive the count from the service signal
+  
+
   favoritesCount = computed(() => this.favoritesService.favorites().length);
-  // isLoggedIn = signal<boolean>(false);
-// isAdmin = this.authService.isAdmin();
-isLoggedIn(): boolean {
-  return !!localStorage.getItem('accessToken');
-}
+
+  isLoggedIn = signal(false);
+
   constructor() {
     
+    
   }
-  ngOnInit() {}
+  ngOnInit() {
+     this.isLoggedIn.set( !!localStorage.getItem('accessToken'))
+  }
 }
